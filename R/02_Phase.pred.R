@@ -13,8 +13,8 @@
 #' the rownames
 #' @returns a vector with the prediction for the selected site where each position
 #' is the probability per period
-#' @importFrom MASS fractions
-#' @importFrom extraDistr ddirmnom
+#' @import MASS
+#' @import extraDistr
 #' @export
 
 Phase.pred <- function(dated, estimate, prior = "Perk", site){

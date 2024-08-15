@@ -2,5 +2,5 @@
 
 export(Infer)
 export(Phase.pred)
-importFrom(MASS,fractions)
-importFrom(extraDistr,ddirmnom)
+import(MASS)
+import(extraDistr)

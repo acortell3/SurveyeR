@@ -10,7 +10,7 @@
 #' "BayesLaplace","Hierarchical". Default is "Perk".
 #' @returns A list where each element is the period. Each element/period is a data frame
 #' with the curve for each type
-#' @importFrom MASS fractions
+#' @import MASS
 #' @export
 
 Infer <- function(data, prior = "Perk"){
