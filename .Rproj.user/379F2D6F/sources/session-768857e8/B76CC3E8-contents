@@ -1,0 +1,22 @@
+
+
+Pottery.control <- read.csv("Pottery_dataset/Pottery_control.csv")
+Pottery.control[is.na(Pottery.control)] <- 0
+rownames(Pottery.control) <- Pottery.control[,1]
+Pottery.control <- Pottery.control[,-1]
+rownames(Pottery.control) <- c("Pardo VIII", "Barranquet", "Mas d'Is 80", "Or J1",
+                               "Or K1", "Cendres H19", "Fosca Ebo", "Mas d'Is 52",
+                               "Or J2", "Or K2", "Sarsa", "Cendres H18", "Or J3",
+                               "Or K3", "Cendres H17", "Pardo VII", "Or K4", "Or J4",
+                               "Cendres H16", "Or J5", "Or K5", "Cendres H15a",
+                               "Mas d'Is F4 inf", "Cendres H15", "Mas d'Is F4 sup",
+                               "Cendres H14-13"
+                               )
+
+Pottery.predict <- read.csv("Pottery_dataset/Pottey_sites.csv")
+Pottery.predict[is.na(Pottery.predict)] <- 0
+rownames(Pottery.predict) <- Pottery.predict[,1]
+Pottery.predict <- Pottery.predict[,-1]
+
+save(Pottery.control,Pottery.predict, file = "./data/Pottery.RData")
+
