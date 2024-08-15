@@ -12,6 +12,6 @@ License:
 Encoding: UTF-8
 LazyData: true
 Imports:
-    MASS
+    MASS,
     extraDistr
 RoxygenNote: 7.3.2
