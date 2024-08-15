@@ -13,6 +13,8 @@
 #' the rownames
 #' @returns a vector with the prediction for the selected site where each position
 #' is the probability per period
+#' @importFrom MASS fractions
+#' @importFrom extraDistr ddirmnom
 #' @export
 
 Phase.pred <- function(dated, estimate, prior = "Perk", site){
@@ -72,7 +74,7 @@ Phase.pred <- function(dated, estimate, prior = "Perk", site){
     }
 
     for (i in 1:length(svaria)){
-      y[[i]] <- MASS::fractions(types[[i]] + teo_distribution)
+      y[[i]] <- fractions(types[[i]] + teo_distribution)
     }
 
     Dir.res[[j]] <- unlist(y)
@@ -87,7 +89,7 @@ Phase.pred <- function(dated, estimate, prior = "Perk", site){
   likelihood <- rep(NA,length(post))
 
   for (i in 1:length(post)){
-    likelihood[i] <- extraDistr::ddirmnom(y.star, n.star, as.numeric(Dir.res[[i]]))
+    likelihood[i] <- ddirmnom(y.star, n.star, as.numeric(Dir.res[[i]]))
   }
 
   ## Results

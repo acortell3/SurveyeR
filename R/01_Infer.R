@@ -10,6 +10,7 @@
 #' "BayesLaplace","Hierarchical". Default is "Perk".
 #' @returns A list where each element is the period. Each element/period is a data frame
 #' with the curve for each type
+#' @importFrom MASS fractions
 #' @export
 
 Infer <- function(data, prior = "Perk"){
@@ -55,7 +56,7 @@ Infer <- function(data, prior = "Perk"){
       ## Data frames with the sum of type [j] in period [i]
       sum_newdata[[j]] <- sum(newdata[,j])
       ## Data frame with the proportions of type [j] in period [i]
-      ys[[j]] <- MASS::fractions(sum(newdata[,j])+teo_distribution)
+      ys[[j]] <- fractions(sum(newdata[,j])+teo_distribution)
     }
 
     # create a new data.frame with the sum of the rest of type[j] in period[i] (result in proportions)
@@ -82,3 +83,4 @@ Infer <- function(data, prior = "Perk"){
   }
   return(periods_train)
 }
+
