@@ -10,9 +10,6 @@ Infer(data, prior = "Perk")
 \item{data:}{A data.frame with the known data where the first column is the
 assigned period and successive columns are the ordered types}
 
-\item{periods:}{A factor where the name of each value is the site/level
-and the value is the period to which the site/level corresponds.}
-
 \item{prior:}{Prior to be selected. Options are "Haldane", "Jeffreys", "Perk",
 "BayesLaplace","Hierarchical". Default is "Perk".}
 }
