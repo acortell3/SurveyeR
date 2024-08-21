@@ -4,8 +4,6 @@
 #' types given the control (or any) dataset and a non-informative prior
 #' @param data: A data.frame with the known data where the first column is the
 #'  assigned period and successive columns are the ordered types
-#' @param periods: A factor where the name of each value is the site/level
-#' and the value is the period to which the site/level corresponds.
 #' @param prior: Prior to be selected. Options are "Haldane", "Jeffreys", "Perk",
 #' "BayesLaplace","Hierarchical". Default is "Perk".
 #' @returns A list where each element is the period. Each element/period is a data frame
