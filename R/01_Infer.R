@@ -73,7 +73,7 @@ Infer <- function(data, prior = "Perk"){
 
     # create a vector with the combination of all marginal distributions
     beta_dist <- as.data.frame(matrix(unlist(type), ncol = Ty))
-    beta_dist[beta_dist == Inf] <- 0 ## When 0 is too low
+    #beta_dist[beta_dist == Inf] <- 0 ## When 0 is too low
     colnames(beta_dist) <- paste0("Type.", 1:Ty)
 
     periods_train[[i]] <- beta_dist
