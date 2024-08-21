@@ -76,7 +76,7 @@ Infer <- function(data, prior = "Perk"){
     colnames(beta_dist) <- paste0("Type.", 1:Ty)
 
     periods_train[[i]] <- beta_dist
-    names(periods_train)[[i]] <- paste("period_",i)
+    names(periods_train)[[i]] <- paste0("period_",i)
 
   }
   return(periods_train)
